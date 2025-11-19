@@ -1,19 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\PhotoController;
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AlbumController::class, 'index'])->name('liste-albums');
+Route::get('/album/{id}', [AlbumController::class, 'show'])->name('voir-album');
+Route::get('/album/{album_id}/ajouter-photo', [PhotoController::class, 'create'])->name('ajouter-photo');
+Route::post('/photo/enregistrer', [PhotoController::class, 'store'])->name('enregistrer-photo');
+Route::delete('/photo/{id}/supprimer', [PhotoController::class, 'destroy'])->name('supprimer-photo');

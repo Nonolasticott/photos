@@ -1,0 +1,203 @@
+.conteneur-formulaire {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.formulaire-ajout {
+    background: white;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.titre-formulaire {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--couleur-texte);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sous-titre-formulaire {
+    color: var(--couleur-texte-clair);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.zone-champ {
+    margin-bottom: 1.5rem;
+}
+
+.etiquette-champ {
+    font-weight: 600;
+    color: var(--couleur-texte);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.champ-texte {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.champ-texte:focus {
+    outline: none;
+    border-color: var(--couleur-principale);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.message-aide {
+    color: var(--couleur-texte-clair);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.zone-tags {
+    border: 2px solid #e5e7eb;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.option-tag {
+    margin-bottom: 0.75rem;
+}
+
+.option-tag label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.option-tag label:hover {
+    background: var(--couleur-fond);
+}
+
+.option-tag input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    accent-color: var(--couleur-principale);
+}
+
+.actions-formulaire {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.bouton-annuler {
+    background: #e5e7eb;
+    color: var(--couleur-texte);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex: 1;
+    justify-content: center;
+}
+
+.bouton-annuler:hover {
+    background: #d1d5db;
+    transform: translateY(-2px);
+}
+
+.bouton-valider {
+    background: linear-gradient(135deg, var(--couleur-succes) 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.bouton-valider:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.zone-upload {
+    border: 3px dashed #d1d5db;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    background: var(--couleur-fond);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.zone-upload:hover {
+    border-color: var(--couleur-principale);
+    background: #f0f1ff;
+}
+
+.zone-upload i {
+    font-size: 3rem;
+    color: var(--couleur-principale);
+    margin-bottom: 1rem;
+}
+
+.zone-upload p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.zone-upload small {
+    color: var(--couleur-texte-clair);
+}
+
+#nom-fichier {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--couleur-succes);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .formulaire-ajout {
+        padding: 2rem 1.5rem;
+    }
+    
+    .titre-formulaire {
+        font-size: 1.5rem;
+    }
+    
+    .actions-formulaire {
+        flex-direction: column;
+    }
+    
+    .bouton-annuler,
+    .bouton-valider {
+        width: 100%;
+    }
+}
