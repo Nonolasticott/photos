@@ -81,4 +81,18 @@ class AlbumController extends Controller
         
         return view('show', compact('album', 'photos', 'tousTags', 'tri', 'ordre'));
     }
+    
+    public function update($id, Request $request)
+    {
+        $request->validate([
+            'titre' => 'required|string|max:255'
+        ]);
+        
+        DB::table('albums')
+            ->where('id', $id)
+            ->update(['titre' => $request->titre]);
+        
+        return redirect()->route('voir-album', $id)
+            ->with('success', 'Album renommé avec succès !');
+    }
 }

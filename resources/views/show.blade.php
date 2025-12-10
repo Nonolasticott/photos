@@ -9,6 +9,9 @@
 @section('contenu')
 <div>
     <div class="entete-album">
+        <button class="bouton-renommer" onclick="afficherFormulaireRenommage()">
+            <i class="fas fa-edit"></i>
+        </button>
         <h1 class="titre-album">
             <i class="fas fa-folder-open"></i> {{ $album->titre }}
         </h1>
@@ -147,6 +150,24 @@
 
 @section('scripts')
 <script>
+const urlRenommerAlbum = '{{ route('renommer-album', $album->id) }}';
+
+function afficherFormulaireRenommage() {
+    const nouveauNom = prompt('Nouveau nom de l\'album:', '{{ $album->titre }}');
+    if (nouveauNom && nouveauNom.trim() !== '') {
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = urlRenommerAlbum;
+        form.innerHTML = `
+            @csrf
+            @method('PUT')
+            <input type="hidden" name="titre" value="${nouveauNom}">
+        `;
+        document.body.appendChild(form);
+        form.submit();
+    }
+}
+
 function ouvrirModal(urlImage, titreImage) {
     document.getElementById('modalPhoto').style.display = 'block';
     document.getElementById('imageModal').src = urlImage;
