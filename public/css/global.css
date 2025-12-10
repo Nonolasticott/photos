@@ -24,7 +24,7 @@ body {
 
 .barre-navigation {
     background: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -43,8 +43,8 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
-    background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -57,11 +57,20 @@ body {
 }
 
 .lien-navigation {
-    display: none;
+    color: var(--couleur-texte);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.2s;
 }
 
 .lien-navigation:hover {
-    display: none;
+    background: var(--couleur-fond);
+    color: var(--couleur-principale);
 }
 
 .conteneur-principal {
@@ -80,7 +89,7 @@ body {
     align-items: center;
     gap: 0.75rem;
     font-weight: 500;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .message-erreur {
@@ -93,10 +102,18 @@ body {
     align-items: center;
     gap: 0.75rem;
     font-weight: 500;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--couleur-principale) var(--couleur-fond);
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--couleur-fond);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
+    border-radius: 10px;
 }

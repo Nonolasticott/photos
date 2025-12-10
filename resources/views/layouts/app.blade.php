@@ -21,10 +21,6 @@
                 <i class="fas fa-camera-retro"></i>
                 <span>PhotoManager</span>
             </a>
-            <a href="{{ route('liste-albums') }}" class="lien-navigation">
-                <i class="fas fa-images"></i>
-                <span>Mes Albums</span>
-            </a>
         </div>
     </nav>
 

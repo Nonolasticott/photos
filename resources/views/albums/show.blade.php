@@ -46,15 +46,19 @@
                     <label class="label-filtre">
                         <i class="fas fa-sort"></i> Trier par
                     </label>
-                    <div class="groupe-radio">
-                        <label class="radio-label">
-                            <input type="radio" name="sort" value="titre" {{ $tri == 'titre' ? 'checked' : '' }}>
-                            Titre (A-Z)
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="sort" value="note" {{ $tri == 'note' ? 'checked' : '' }}>
-                            Note
-                        </label>
+                    <div class="groupe-boutons">
+                        <a href="{{ route('voir-album', ['id' => $album->id, 'sort' => 'titre', 'order' => 'asc']) }}{{ request('search') ? '&search=' . request('search') : '' }}{{ request('tags') ? '&tags[]=' . implode('&tags[]=', request('tags')) : '' }}" class="bouton-tri">
+                            <i class="fas fa-sort-alpha-down"></i> Titre (A <i class="fa-solid fa-arrow-right-long"></i> Z)
+                        </a>
+                        <a href="{{ route('voir-album', ['id' => $album->id, 'sort' => 'titre', 'order' => 'desc']) }}{{ request('search') ? '&search=' . request('search') : '' }}{{ request('tags') ? '&tags[]=' . implode('&tags[]=', request('tags')) : '' }}" class="bouton-tri">
+                            <i class="fas fa-sort-alpha-up"></i> Titre (Z <i class="fa-solid fa-arrow-right-long"></i> A)
+                        </a>
+                        <a href="{{ route('voir-album', ['id' => $album->id, 'sort' => 'note', 'order' => 'desc']) }}{{ request('search') ? '&search=' . request('search') : '' }}{{ request('tags') ? '&tags[]=' . implode('&tags[]=', request('tags')) : '' }}" class="bouton-tri">
+                            <i class="fas fa-arrow-up"></i> Note (Meilleur)
+                        </a>
+                        <a href="{{ route('voir-album', ['id' => $album->id, 'sort' => 'note', 'order' => 'asc']) }}{{ request('search') ? '&search=' . request('search') : '' }}{{ request('tags') ? '&tags[]=' . implode('&tags[]=', request('tags')) : '' }}" class="bouton-tri">
+                            <i class="fas fa-arrow-down"></i> Note (Pire)
+                        </a>
                     </div>
                 </div>
             </div>
@@ -114,7 +118,14 @@
                 </div>
                 
                 <div class="note-photo">
-                    <i class="fas fa-star"></i> {{ $photo->note }}/5
+                    @for ($i = 1; $i <= 5; $i++)
+                        @if ($i <= $photo->note)
+                            <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        @else
+                            <i class="fas fa-star" style="color: #d1d5db;"></i>
+                        @endif
+                    @endfor
+                    <span style="margin-left: 0.5rem; font-size: 0.9rem; color: #6b7280;">{{ round($photo->note, 1) }}/5</span>
                 </div>
             </div>
         </div>

@@ -338,6 +338,46 @@
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
+.titre-panneau {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--couleur-texte);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.groupe-boutons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.bouton-tri {
+    background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.bouton-tri:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    color: white !important;
+    text-decoration: none;
+}
+
 @media (max-width: 768px) {
     .titre-album {
         font-size: 1.75rem;
