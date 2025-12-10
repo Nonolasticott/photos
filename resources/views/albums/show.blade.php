@@ -35,38 +35,43 @@
     <div class="zone-filtres">
         <form method="GET" action="{{ route('voir-album', $album->id) }}">
             <div class="row">
-                <div class="col-md-4 mb-3">
+                <div class="col-md-6 mb-3">
                     <label class="label-filtre">
                         <i class="fas fa-search"></i> Rechercher
                     </label>
-                    <input type="text" name="search" class="champ-recherche" 
-                           placeholder="Titre de la photo..." 
-                           value="{{ request('search') }}">
+                    <input type="text" name="search" class="champ-recherche" placeholder="Titre de la photo..." value="{{ request('search') }}">
                 </div>
                 
-                <div class="col-md-4 mb-3">
-                    <label class="label-filtre">
-                        <i class="fas fa-tags"></i> Filtrer par tags
-                    </label>
-                    <select name="tags[]" class="champ-recherche" multiple size="3">
-                        @foreach($tousTags as $tag)
-                        <option value="{{ $tag->id }}" 
-                                {{ in_array($tag->id, (array) request('tags')) ? 'selected' : '' }}>
-                            {{ $tag->nom }}
-                        </option>
-                        @endforeach
-                    </select>
-                    <small style="color: #6b7280;">Ctrl pour plusieurs</small>
-                </div>
-                
-                <div class="col-md-4 mb-3">
+                <div class="col-md-6 mb-3">
                     <label class="label-filtre">
                         <i class="fas fa-sort"></i> Trier par
                     </label>
-                    <select name="sort" class="champ-recherche">
-                        <option value="titre" {{ $tri == 'titre' ? 'selected' : '' }}>Titre</option>
-                        <option value="note" {{ $tri == 'note' ? 'selected' : '' }}>Note</option>
-                    </select>
+                    <div class="groupe-radio">
+                        <label class="radio-label">
+                            <input type="radio" name="sort" value="titre" {{ $tri == 'titre' ? 'checked' : '' }}>
+                            Titre (A-Z)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="sort" value="note" {{ $tri == 'note' ? 'checked' : '' }}>
+                            Note
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-tags">
+                <label class="label-filtre">
+                    <i class="fas fa-tags"></i> Filtrer par tags
+                </label>
+                <div class="liste-tags">
+                    @foreach($tousTags as $tag)
+                    <label class="checkbox-tag">
+                        <input type="checkbox" name="tags[]" value="{{ $tag->id }}"
+                               {{ in_array($tag->id, (array) request('tags')) ? 'checked' : '' }}
+                               style="display: none;">
+                        <span class="badge-tag">{{ $tag->nom }}</span>
+                    </label>
+                    @endforeach
                 </div>
             </div>
             

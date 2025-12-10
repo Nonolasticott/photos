@@ -71,7 +71,13 @@ class AlbumController extends Controller
                 ->get();
         }
         
-        $tousTags = DB::table('tags')->get();
+        $tousTags = DB::table('tags')
+            ->join('possede_tag', 'tags.id', '=', 'possede_tag.tag_id')
+            ->join('photos', 'possede_tag.photo_id', '=', 'photos.id')
+            ->where('photos.album_id', $album->id)
+            ->select('tags.*')
+            ->distinct()
+            ->get();
         
         return view('albums.show', compact('album', 'photos', 'tousTags', 'tri', 'ordre'));
     }
