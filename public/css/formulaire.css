@@ -7,7 +7,7 @@
     background: white;
     padding: 3rem;
     border-radius: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
 }
 
@@ -133,7 +133,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -143,7 +143,7 @@
 
 .bouton-valider:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .zone-upload {
@@ -187,15 +187,15 @@
     .formulaire-ajout {
         padding: 2rem 1.5rem;
     }
-    
+
     .titre-formulaire {
         font-size: 1.5rem;
     }
-    
+
     .actions-formulaire {
         flex-direction: column;
     }
-    
+
     .bouton-annuler,
     .bouton-valider {
         width: 100%;
