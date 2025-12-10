@@ -9,28 +9,41 @@ class TagController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'nom' => 'required|string|max:100|unique:tags,nom',
-        ]);
-
+        $nomTag = $request->input('nom');
+        
+        if (!$nomTag) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Le nom du tag est requis'
+            ], 400);
+        }
+        
         try {
-            $tag = DB::table('tags')->insertGetId([
-                'nom' => $request->input('nom'),
-                'created_at' => now(),
-                'updated_at' => now(),
+            $tagExistant = DB::table('tags')->where('nom', $nomTag)->first();
+            if ($tagExistant) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Ce tag existe déjà'
+                ], 409);
+            }
+            
+            $tagId = DB::table('tags')->insertGetId([
+                'nom' => $nomTag,
             ]);
+            
+            $tag = DB::table('tags')->where('id', $tagId)->first();
 
             return response()->json([
                 'success' => true,
                 'tag' => [
-                    'id' => $tag,
-                    'nom' => $request->input('nom'),
+                    'id' => $tag->id,
+                    'nom' => $tag->nom,
                 ]
-            ]);
+            ], 201);
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => 'Erreur lors de la création du tag'
+                'message' => 'Erreur: ' . $e->getMessage()
             ], 500);
         }
     }

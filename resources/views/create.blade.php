@@ -178,56 +178,62 @@ zoneUpload.addEventListener('drop', (e) => {
 });
 
 // Gestion de l'ajout de nouveau tag
-document.getElementById('btn-ajouter-tag').addEventListener('click', function() {
-    const input = document.getElementById('nouveau-tag');
-    const nomTag = input.value.trim();
-    const message = document.getElementById('nouveau-tag-message');
-    
-    if (!nomTag) {
-        message.textContent = '⚠ Veuillez entrer un nom de tag';
-        message.className = 'error';
-        return;
-    }
-    
-    // Créer le nouveau tag via AJAX
-    fetch('{{ route("creer-tag") }}', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value
-        },
-        body: JSON.stringify({ nom: nomTag })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Ajouter le nouveau tag à la liste et le cocher
-            const zoneTagsDiv = document.querySelector('.zone-tags');
-            const optionDiv = document.createElement('div');
-            optionDiv.className = 'option-tag';
-            optionDiv.innerHTML = `
-                <label>
-                    <input type="checkbox" name="tags[]" value="${data.tag.id}" checked>
-                    <span>${data.tag.nom}</span>
-                </label>
-            `;
-            zoneTagsDiv.appendChild(optionDiv);
-            
-            // Réinitialiser l'input et afficher un message de succès
-            input.value = '';
-            message.textContent = '✓ Tag "' + data.tag.nom + '" ajouté avec succès';
-            message.className = 'success';
-            setTimeout(() => { message.className = ''; message.textContent = ''; }, 3000);
-        } else {
-            message.textContent = '✗ ' + (data.message || 'Ce tag existe déjà');
+const btnAjouterTag = document.getElementById('btn-ajouter-tag');
+
+if (btnAjouterTag) {
+    btnAjouterTag.addEventListener('click', function(e) {
+        e.preventDefault();
+        const input = document.getElementById('nouveau-tag');
+        const nomTag = input.value.trim();
+        const message = document.getElementById('nouveau-tag-message');
+        
+        if (!nomTag) {
+            message.textContent = '⚠ Veuillez entrer un nom de tag';
             message.className = 'error';
+            return;
         }
-    })
-    .catch(error => {
-        message.textContent = '✗ Erreur lors de l\'ajout du tag';
-        message.className = 'error';
-        console.error('Erreur:', error);
+        
+        fetch('{{ route("creer-tag") }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value
+            },
+            body: JSON.stringify({ nom: nomTag })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                const zoneTagsDiv = document.querySelector('.zone-tags');
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option-tag';
+                optionDiv.innerHTML = `
+                    <label>
+                        <input type="checkbox" name="tags[]" value="${data.tag.id}" checked>
+                        <span>${data.tag.nom}</span>
+                    </label>
+                `;
+                zoneTagsDiv.appendChild(optionDiv);
+                
+                input.value = '';
+                message.textContent = '✓ Tag ajouté !';
+                message.className = 'success';
+                setTimeout(() => { message.className = ''; message.textContent = ''; }, 2000);
+            } else {
+                message.textContent = '✗ ' + (data.message || 'Erreur');
+                message.className = 'error';
+            }
+        })
+        .catch(error => {
+            message.textContent = '✗ Erreur';
+            message.className = 'error';
+        });
     });
-});
+}
 </script>
 @endsection
