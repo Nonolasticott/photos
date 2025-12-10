@@ -18,7 +18,7 @@ class PhotoController extends Controller
         
         $tags = DB::table('tags')->get();
         
-        return view('photos.create', compact('album', 'tags'));
+        return view('create', compact('album', 'tags'));
     }
     
     public function store(Request $request)

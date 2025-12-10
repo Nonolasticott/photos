@@ -1,3 +1,5 @@
+/* ALBUMS INDEX PAGE */
+
 .titre-page {
     font-size: 3rem;
     font-weight: 800;
@@ -13,7 +15,7 @@
     padding: 1.5rem 2rem;
     border-radius: 1rem;
     margin-bottom: 2.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
 }
 
@@ -33,31 +35,6 @@
     flex-wrap: wrap;
 }
 
-.bouton-tri {
-    background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 100%);
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-}
-
-.bouton-tri:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    color: white !important;
-    text-decoration: none;
-}
-
-/* GRILLE RESPONSIVE BOOTSTRAP */
 .grille-albums {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -89,7 +66,7 @@
 
 .carte-album:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .carte-album:hover::before {
@@ -146,7 +123,7 @@
     padding: 4rem 2rem;
     border-radius: 1rem;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border: 2px dashed #d1d5db;
     grid-column: 1 / -1;
 }
@@ -163,40 +140,9 @@
     margin: 0;
 }
 
-@media (max-width: 1200px) {
-    .grille-albums {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .titre-page {
-        font-size: 2rem;
-    }
-    
-    .grille-albums {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .groupe-boutons {
-        flex-direction: column;
-    }
-    
-    .bouton-tri {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .nom-album {
-        font-size: 1.25rem;
-    }
-}
-
 .folder {
-	mask: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20150%20100%22%3E%3Cpath%20d%3D%22M10%2C0H80A10%2C10%200%2C0%2C1%2090%2C10V20A10%2C10%200%2C0%2C0%20100%2C30H140A10%2C10%200%2C0%2C1%20150%2C40V90A10%2C10%200%2C0%2C1%20140%2C100H10A10%2C10%200%2C0%2C1%200%2C90V10A10%2C10%200%2C0%2C1%2010%2C0Z%22%20fill%3D%22%23fff%22%20%2F%3E%3C%2Fsvg%3E') no-repeat center / contain;
-	width: 100%;
-	background-color: white;
-	aspect-ratio: 3 / 2;
+    mask: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20150%20100%22%3E%3Cpath%20d%3D%22M10%2C0H80A10%2C10%200%2C0%2C1%2090%2C10V20A10%2C10%200%2C0%2C0%20100%2C30H140A10%2C10%200%2C0%2C1%20150%2C40V90A10%2C10%200%2C0%2C1%20140%2C100H10A10%2C10%200%2C0%2C1%200%2C90V10A10%2C10%200%2C0%2C1%2010%2C0Z%22%20fill%3D%22%23fff%22%20%2F%3E%3C%2Fsvg%3E') no-repeat center / contain;
+    width: 100%;
+    background-color: white;
+    aspect-ratio: 3 / 2;
 }

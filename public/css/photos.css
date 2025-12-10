@@ -1,3 +1,5 @@
+/* ALBUM DETAIL PAGE - PHOTOS DISPLAY */
+
 .entete-album {
     background: white;
     padding: 2rem;
@@ -85,12 +87,31 @@
     border: 1px solid #e5e7eb;
 }
 
-.label-filtre {
+.etiquette-filtre {
     font-weight: 600;
     color: var(--couleur-texte);
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
+    gap: 0.5rem;
+}
+
+.rangee-filtres {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.colonne-recherche {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.colonne-tri {
+    display: flex;
+    flex-direction: column;
     gap: 0.5rem;
 }
 
@@ -110,7 +131,13 @@
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
-.bouton-filtrer {
+.conteneur-boutons-tri {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.bouton-appliquer-filtres {
     background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 100%);
     color: white;
     border: none;
@@ -122,12 +149,12 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.bouton-filtrer:hover {
+.bouton-appliquer-filtres:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.bouton-reinitialiser {
+.bouton-reinitialiser-filtres {
     background: #e5e7eb;
     color: var(--couleur-texte);
     border: none;
@@ -141,9 +168,15 @@
     transition: all 0.3s ease;
 }
 
-.bouton-reinitialiser:hover {
+.bouton-reinitialiser-filtres:hover {
     background: #d1d5db;
     transform: translateY(-2px);
+}
+
+.groupe-boutons-action {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .grille-photos {
@@ -183,7 +216,7 @@
     padding: 1.25rem;
 }
 
-.titre-photo {
+.nom-photo {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--couleur-texte);
@@ -202,7 +235,7 @@
     display: inline-block;
 }
 
-.note-photo {
+.note-affichage {
     color: #f59e0b;
     font-weight: 700;
     margin-top: 0.75rem;
@@ -294,8 +327,7 @@
     accent-color: var(--couleur-principale);
 }
 
-/* Section des tags avec checkboxes */
-.section-tags {
+.section-filtrage-tags {
     margin-top: 2rem;
     padding-top: 1.5rem;
     border-top: 1px solid #e5e7eb;
@@ -308,13 +340,13 @@
     margin-top: 1rem;
 }
 
-.checkbox-tag {
+.etiquette-tag-cocher {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
-.checkbox-tag input[type="checkbox"] {
+.etiquette-tag-cocher input[type="checkbox"] {
     cursor: pointer;
 }
 
@@ -330,7 +362,7 @@
     cursor: pointer;
 }
 
-.checkbox-tag input[type="checkbox"]:checked + .badge-tag {
+.etiquette-tag-cocher input[type="checkbox"]:checked + .badge-tag {
     background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 100%);
     color: white;
     border-color: var(--couleur-secondaire);
@@ -338,62 +370,21 @@
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-.titre-panneau {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--couleur-texte);
+.contenu-carte {
+    padding: 1.25rem;
+}
+
+.zone-vide {
+    background: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 1.25rem;
+    color: var(--couleur-texte-clair);
+}
+
+.zone-vide i {
+    font-size: 3rem;
+    color: var(--couleur-principale);
     margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.groupe-boutons {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-}
-
-.bouton-tri {
-    background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 100%);
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-}
-
-.bouton-tri:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    color: white !important;
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    .titre-album {
-        font-size: 1.75rem;
-    }
-
-    .grille-photos {
-        grid-template-columns: 1fr;
-    }
-
-    .actions-album {
-        flex-direction: column;
-    }
-
-    .bouton-retour,
-    .bouton-ajouter {
-        width: 100%;
-        justify-content: center;
-    }
+    display: block;
 }

@@ -13,6 +13,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--couleur-principale) var(--couleur-fond);
 }
 
 body {
@@ -70,9 +72,59 @@ body {
     padding: 3rem 2rem;
 }
 
+.bouton-tri {
+    background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.bouton-tri:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: white !important;
+    text-decoration: none;
+}
+
+.msg-succes {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    color: #065f46;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    margin: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .message-succes {
     background: linear-gradient(135deg, #d1fae5, #a7f3d0);
     color: #065f46;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    margin: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.msg-erreur {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    color: #991b1b;
     padding: 1rem 1.5rem;
     border-radius: 0.75rem;
     margin: 1.5rem 2rem;
@@ -94,9 +146,4 @@ body {
     gap: 0.75rem;
     font-weight: 500;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--couleur-principale) var(--couleur-fond);
 }

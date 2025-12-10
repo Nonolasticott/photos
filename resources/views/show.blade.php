@@ -3,7 +3,7 @@
 @section('titre', $album->titre)
 
 @section('styles-css')
-<link rel="stylesheet" href="{{ asset('css/album-detail.css') }}">
+<link rel="stylesheet" href="{{ asset('css/photos.css') }}">
 @endsection
 
 @section('contenu')
@@ -34,19 +34,19 @@
 
     <div class="zone-filtres">
         <form method="GET" action="{{ route('voir-album', $album->id) }}">
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="label-filtre">
+            <div class="rangee-filtres">
+                <div class="colonne-recherche">
+                    <label class="etiquette-filtre">
                         <i class="fas fa-search"></i> Rechercher
                     </label>
                     <input type="text" name="search" class="champ-recherche" placeholder="Titre de la photo..." value="{{ request('search') }}">
                 </div>
                 
-                <div class="col-md-6 mb-3">
-                    <label class="label-filtre">
+                <div class="colonne-tri">
+                    <label class="etiquette-filtre">
                         <i class="fas fa-sort"></i> Trier par
                     </label>
-                    <div class="groupe-boutons">
+                    <div class="conteneur-boutons-tri">
                         <a href="{{ route('voir-album', ['id' => $album->id, 'sort' => 'titre', 'order' => 'asc']) }}{{ request('search') ? '&search=' . request('search') : '' }}{{ request('tags') ? '&tags[]=' . implode('&tags[]=', request('tags')) : '' }}" class="bouton-tri">
                             <i class="fas fa-sort-alpha-down"></i> Titre (A <i class="fa-solid fa-arrow-right-long"></i> Z)
                         </a>
@@ -54,22 +54,22 @@
                             <i class="fas fa-sort-alpha-up"></i> Titre (Z <i class="fa-solid fa-arrow-right-long"></i> A)
                         </a>
                         <a href="{{ route('voir-album', ['id' => $album->id, 'sort' => 'note', 'order' => 'desc']) }}{{ request('search') ? '&search=' . request('search') : '' }}{{ request('tags') ? '&tags[]=' . implode('&tags[]=', request('tags')) : '' }}" class="bouton-tri">
-                            <i class="fas fa-arrow-up"></i> Note (Meilleur)
+                            <i class="fas fa-arrow-up"></i> Bonne Note
                         </a>
                         <a href="{{ route('voir-album', ['id' => $album->id, 'sort' => 'note', 'order' => 'asc']) }}{{ request('search') ? '&search=' . request('search') : '' }}{{ request('tags') ? '&tags[]=' . implode('&tags[]=', request('tags')) : '' }}" class="bouton-tri">
-                            <i class="fas fa-arrow-down"></i> Note (Pire)
+                            <i class="fas fa-arrow-down"></i> Mauvaise Note
                         </a>
                     </div>
                 </div>
             </div>
             
-            <div class="section-tags">
-                <label class="label-filtre">
+            <div class="section-filtrage-tags">
+                <label class="etiquette-filtre">
                     <i class="fas fa-tags"></i> Filtrer par tags
                 </label>
                 <div class="liste-tags">
                     @foreach($tousTags as $tag)
-                    <label class="checkbox-tag">
+                    <label class="etiquette-tag-cocher">
                         <input type="checkbox" name="tags[]" value="{{ $tag->id }}"
                                {{ in_array($tag->id, (array) request('tags')) ? 'checked' : '' }}
                                style="display: none;">
@@ -79,11 +79,11 @@
                 </div>
             </div>
             
-            <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                <button type="submit" class="bouton-filtrer">
+            <div class="groupe-boutons-action">
+                <button type="submit" class="bouton-appliquer-filtres">
                     <i class="fas fa-filter"></i> Appliquer
                 </button>
-                <a href="{{ route('voir-album', $album->id) }}" class="bouton-reinitialiser">
+                <a href="{{ route('voir-album', $album->id) }}" class="bouton-reinitialiser-filtres">
                     <i class="fas fa-redo"></i> Réinitialiser
                 </a>
             </div>
@@ -108,8 +108,8 @@
                  class="image-photo"
                  onclick="ouvrirModal('{{ $photo->url }}', '{{ $photo->titre }}')">
             
-            <div class="corps-carte">
-                <div class="titre-photo">{{ $photo->titre }}</div>
+            <div class="contenu-carte">
+                <div class="nom-photo">{{ $photo->titre }}</div>
                 
                 <div>
                     @foreach($photo->tags as $tag)
@@ -117,7 +117,7 @@
                     @endforeach
                 </div>
                 
-                <div class="note-photo">
+                <div class="note-affichage">
                     @for ($i = 1; $i <= 5; $i++)
                         @if ($i <= $photo->note)
                             <i class="fas fa-star" style="color: #fbbf24;"></i>
@@ -132,7 +132,7 @@
         @endforeach
     </div>
     @else
-    <div class="etat-vide" style="background: white;">
+    <div class="zone-vide">
         <i class="fas fa-image"></i>
         <p>Aucune photo ne correspond à vos critères</p>
     </div>

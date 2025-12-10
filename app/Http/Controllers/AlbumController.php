@@ -27,7 +27,7 @@ class AlbumController extends Controller
             ->orderBy($tri, $ordre)
             ->get();
         
-        return view('albums.index', compact('albums', 'tri', 'ordre'));
+        return view('index', compact('albums', 'tri', 'ordre'));
     }
     
     public function show($id, Request $request)
@@ -79,6 +79,6 @@ class AlbumController extends Controller
             ->distinct()
             ->get();
         
-        return view('albums.show', compact('album', 'photos', 'tousTags', 'tri', 'ordre'));
+        return view('show', compact('album', 'photos', 'tousTags', 'tri', 'ordre'));
     }
 }

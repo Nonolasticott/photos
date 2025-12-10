@@ -3,7 +3,7 @@
 @section('titre', 'Ajouter une photo')
 
 @section('styles-css')
-<link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
+<link rel="stylesheet" href="{{ asset('css/form.css') }}">
 @endsection
 
 @section('contenu')

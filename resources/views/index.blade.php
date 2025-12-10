@@ -3,7 +3,7 @@
 @section('titre', 'Mes Albums Photo')
 
 @section('styles-css')
-<link rel="stylesheet" href="{{ asset('css/album.css') }}">
+<link rel="stylesheet" href="{{ asset('css/albums.css') }}">
 @endsection
 
 @section('contenu')

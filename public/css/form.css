@@ -183,7 +183,6 @@
     font-weight: 600;
 }
 
-/* Étoiles de notation */
 .rating-stars {
     display: flex;
     flex-direction: row-reverse;
@@ -219,7 +218,6 @@
     text-shadow: 0 0 0.5rem rgba(245, 158, 11, 0.5);
 }
 
-/* Zone nouveau tag */
 .zone-nouveau-tag {
     margin-top: 1.5rem;
     padding: 1.25rem;
@@ -300,32 +298,4 @@
     background: #d1fae5;
     color: #065f46;
     display: block;
-}
-
-@media (max-width: 768px) {
-    .formulaire-ajout {
-        padding: 2rem 1.5rem;
-    }
-
-    .titre-formulaire {
-        font-size: 1.5rem;
-    }
-
-    .actions-formulaire {
-        flex-direction: column;
-    }
-
-    .bouton-annuler,
-    .bouton-valider {
-        width: 100%;
-    }
-
-    .groupe-input-tag {
-        flex-direction: column;
-    }
-
-    .bouton-ajouter-tag {
-        width: 100%;
-        justify-content: center;
-    }
 }
