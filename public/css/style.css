@@ -43,8 +43,8 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -105,15 +105,7 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--couleur-fond);
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
-    border-radius: 10px;
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--couleur-principale) var(--couleur-fond);
 }
