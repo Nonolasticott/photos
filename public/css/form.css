@@ -5,29 +5,29 @@
 
 .formulaire-ajout {
     background: white;
-    padding: 3rem;
-    border-radius: 1.5rem;
+    padding: 2rem;
+    border-radius: 1rem;
     border: 1px solid #e5e7eb;
 }
 
 .titre-formulaire {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--couleur-texte);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 .sous-titre-formulaire {
     color: var(--couleur-texte-clair);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-size: 1rem;
 }
 
 .zone-champ {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .etiquette-champ {
@@ -41,10 +41,10 @@
 
 .champ-texte {
     width: 100%;
-    padding: 0.875rem 1rem;
+    padding: 0.5rem;
     border: 2px solid #e5e7eb;
-    border-radius: 0.75rem;
-    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
     font-family: inherit;
 }
 
@@ -55,40 +55,40 @@
 
 .message-aide {
     color: var(--couleur-texte-clair);
-    font-size: 0.85rem;
+    font-size: 1rem;
     margin-top: 0.5rem;
 }
 
 .zone-tags {
     border: 2px solid #e5e7eb;
-    padding: 1.25rem;
-    border-radius: 0.75rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
     max-height: 300px;
     overflow-y: auto;
 }
 
 .option-tag {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .option-tag label {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.25rem;
     border-radius: 0.5rem;
 }
 
 .option-tag input[type="checkbox"] {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1rem;
+    height: 1rem;
     cursor: pointer;
     accent-color: var(--couleur-principale);
 }
 
 .actions-formulaire {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
@@ -98,9 +98,10 @@
     background: #e5e7eb;
     color: var(--couleur-texte);
     border: none;
-    padding: 1rem 2rem;
-    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
     font-weight: 600;
+    font-size: 1rem;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -118,9 +119,10 @@
     background: var(--couleur-succes);
     color: white;
     border: none;
-    padding: 1rem 2rem;
-    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
     font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -148,7 +150,7 @@
 }
 
 .zone-upload i {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--couleur-principale);
     margin-bottom: 1rem;
 }
@@ -196,17 +198,17 @@
 }
 
 .zone-nouveau-tag {
-    margin-top: 1.5rem;
-    padding: 1.25rem;
+    margin-top: 1rem;
+    padding: 1rem;
     background: #f9fafb;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     border: 1px solid #e5e7eb;
 }
 
 .zone-nouveau-tag-titre {
     font-weight: 600;
     color: var(--couleur-texte);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -214,7 +216,7 @@
 
 .groupe-input-tag {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
     align-items: flex-start;
     flex-wrap: wrap;
 }
@@ -222,10 +224,10 @@
 #nouveau-tag {
     flex: 1;
     min-width: 200px;
-    padding: 0.875rem 1rem;
+    padding: 0.5rem;
     border: 2px solid #e5e7eb;
-    border-radius: 0.75rem;
-    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
     font-family: inherit;
 }
 
@@ -238,9 +240,10 @@
     background: var(--couleur-principale);
     color: white;
     border: none;
-    padding: 0.875rem 1.5rem;
-    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
     font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -258,8 +261,8 @@
 
 #nouveau-tag-message {
     width: 100%;
-    margin-top: 0.75rem;
-    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: 0.9rem;
     font-weight: 500;
