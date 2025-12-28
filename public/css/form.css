@@ -7,7 +7,6 @@
     background: white;
     padding: 3rem;
     border-radius: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
 }
 
@@ -46,14 +45,12 @@
     border: 2px solid #e5e7eb;
     border-radius: 0.75rem;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
     font-family: inherit;
 }
 
 .champ-texte:focus {
     outline: none;
     border-color: var(--couleur-principale);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .message-aide {
@@ -81,11 +78,6 @@
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.option-tag label:hover {
-    background: var(--couleur-fond);
 }
 
 .option-tag input[type="checkbox"] {
@@ -113,7 +105,6 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    transition: all 0.3s ease;
     cursor: pointer;
     flex: 1;
     justify-content: center;
@@ -121,19 +112,16 @@
 
 .bouton-annuler:hover {
     background: #d1d5db;
-    transform: translateY(-2px);
 }
 
 .bouton-valider {
-    background: linear-gradient(135deg, var(--couleur-succes) 0%, #059669 100%);
+    background: var(--couleur-succes);
     color: white;
     border: none;
     padding: 1rem 2rem;
     border-radius: 0.75rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -142,8 +130,7 @@
 }
 
 .bouton-valider:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #059669;
 }
 
 .zone-upload {
@@ -152,7 +139,6 @@
     padding: 2rem;
     text-align: center;
     background: var(--couleur-fond);
-    transition: all 0.3s ease;
     cursor: pointer;
 }
 
@@ -198,7 +184,6 @@
 .rating-stars label {
     cursor: pointer;
     color: #d1d5db;
-    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -208,7 +193,6 @@
 
 .rating-stars input[type="radio"]:checked ~ label {
     color: #fbbf24;
-    text-shadow: 0 0 0.5rem rgba(245, 158, 11, 0.5);
 }
 
 .zone-nouveau-tag {
@@ -242,14 +226,12 @@
     border: 2px solid #e5e7eb;
     border-radius: 0.75rem;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
     font-family: inherit;
 }
 
 #nouveau-tag:focus {
     outline: none;
     border-color: var(--couleur-principale);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .bouton-ajouter-tag {
@@ -260,7 +242,6 @@
     border-radius: 0.75rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -269,12 +250,10 @@
 
 .bouton-ajouter-tag:hover {
     background: #5a67d8;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
 .bouton-ajouter-tag:active {
-    transform: translateY(0);
+    background: #4c51bf;
 }
 
 #nouveau-tag-message {

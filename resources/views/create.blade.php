@@ -30,7 +30,6 @@
             @csrf
             <input type="hidden" name="album_id" value="{{ $album->id }}">
             
-            <!-- Upload de fichier -->
             <div class="zone-champ">
                 <label class="etiquette-champ">
                     <i class="fas fa-upload"></i> Upload d'un fichier image
@@ -38,13 +37,11 @@
                 <div class="zone-upload" onclick="document.getElementById('photo_file').click()">
                     <i class="fas fa-cloud-upload-alt"></i>
                     <p style="margin-top: 0.75rem;">Cliquez ou glissez-déposez votre image</p>
-                    <small>JPEG, PNG, JPG, GIF (max 5 Mo)</small>
                 </div>
                 <input type="file" id="photo_file" name="photo_file" class="champ-texte" accept="image/*" style="display: none;">
                 <div class="message-aide" id="nom-fichier"></div>
             </div>
             
-            <!-- URL externe -->
             <div class="zone-champ">
                 <label class="etiquette-champ">
                     <i class="fas fa-link"></i> Ou lien URL d'une image
@@ -55,10 +52,9 @@
                 <div class="message-aide">Copiez-collez l'URL directe vers l'image</div>
             </div>
             
-            <!-- Titre -->
             <div class="zone-champ">
                 <label class="etiquette-champ">
-                    <i class="fas fa-heading"></i> Titre de la photo *
+                    <i class="fas fa-heading"></i> Titre de la photo
                 </label>
                 <input type="text" name="titre" class="champ-texte" 
                        placeholder="Ex: Coucher de soleil à la plage" 
@@ -66,10 +62,9 @@
                        value="{{ old('titre') }}">
             </div>
             
-            <!-- Note -->
             <div class="zone-champ">
                 <label class="etiquette-champ">
-                    <i class="fas fa-star"></i> Note *
+                    <i class="fas fa-star"></i> Note
                 </label>
                 <div class="rating-stars">
                     @for ($i = 5; $i >= 1; $i--)
@@ -82,7 +77,6 @@
                 </div>
             </div>
             
-            <!-- Tags -->
             <div class="zone-champ">
                 <label class="etiquette-champ">
                     <i class="fas fa-tags"></i> Étiquettes / Tags (optionnel)
@@ -100,7 +94,6 @@
                 </div>
             </div>
             
-            <!-- Ajout de nouveau tag -->
             <div class="zone-champ">
                 <label class="etiquette-champ">
                     <i class="fas fa-plus-circle"></i> Ajouter un nouveau tag
@@ -117,7 +110,6 @@
                 </div>
             </div>
             
-            <!-- Boutons -->
             <div class="actions-formulaire">
                 <a href="{{ route('voir-album', $album->id) }}" class="bouton-annuler">
                     <i class="fas fa-times"></i> Annuler
@@ -133,7 +125,6 @@
 
 @section('scripts')
 <script>
-// Affichage du nom du fichier sélectionné
 document.getElementById('photo_file').addEventListener('change', function() {
     const nomFichier = this.files[0]?.name || '';
     document.getElementById('nom-fichier').textContent = nomFichier 
@@ -141,7 +132,6 @@ document.getElementById('photo_file').addEventListener('change', function() {
         : '';
 });
 
-// Glisser-déposer
 const zoneUpload = document.querySelector('.zone-upload');
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
     zoneUpload.addEventListener(eventName, preventDefaults, false);
@@ -177,7 +167,6 @@ zoneUpload.addEventListener('drop', (e) => {
         : '';
 });
 
-// Gestion de l'ajout de nouveau tag
 const btnAjouterTag = document.getElementById('btn-ajouter-tag');
 
 if (btnAjouterTag) {
