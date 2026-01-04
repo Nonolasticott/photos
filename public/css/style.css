@@ -1,12 +1,13 @@
 :root {
-    --couleur-principale: #6366f1;
-    --couleur-secondaire: #8b5cf6;
-    --couleur-accent: #ec4899;
-    --couleur-succes: #10b981;
-    --couleur-danger: #ef4444;
-    --couleur-texte: #1f2937;
-    --couleur-texte-clair: #6b7280;
-    --couleur-fond: #f9fafb;
+    --couleur-principale: #6366F1;
+    --couleur-secondaire: #8B5CF6;
+    --couleur-accent: #EC4899;
+    --couleur-succes: #10B981;
+    --couleur-danger: #EF4444;
+    --couleur-texte: #1F2937;
+    --couleur-texte-clair: #6B7280;
+    --couleur-fond: #F9FAFB;
+    --largeur-max: 1400px;
 }
 
 * {
@@ -25,7 +26,7 @@ body {
 }
 
 .barre-navigation {
-    background: white;
+    background: #FFFFFF;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -33,7 +34,7 @@ body {
 }
 
 .contenu-nav {
-    max-width: 1400px;
+    max-width: var(--largeur-max);
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
@@ -44,6 +45,7 @@ body {
 .logo-site {
     font-size: 2rem;
     font-weight: 700;
+    font-family: 'Special Gothic Expanded One', sans-serif;
     background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
     background-clip: text;
     color: transparent;
@@ -51,6 +53,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    letter-spacing: -0.5px;
 }
 
 .logo-site:hover {
@@ -66,14 +69,14 @@ body {
 }
 
 .conteneur-principal {
-    max-width: 1400px;
+    max-width: var(--largeur-max);
     margin: 0 auto;
     padding: 3rem 2rem;
 }
 
 .bouton-tri {
     background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 100%);
-    color: white;
+    color: #FFFFFF;
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 1rem;
@@ -87,13 +90,13 @@ body {
 }
 
 .bouton-tri:hover {
-    color: white !important;
+    color: #FFFFFF !important;
     text-decoration: none;
 }
 
 .msg-succes {
-    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-    color: #065f46;
+    background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
+    color: #065F46;
     padding: 1rem;
     border-radius: 1rem;
     margin: 1.5rem 2rem;
@@ -104,8 +107,8 @@ body {
 }
 
 .message-succes {
-    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-    color: #065f46;
+    background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
+    color: #065F46;
     padding: 1rem;
     border-radius: 1rem;
     margin: 1.5rem 2rem;
@@ -116,8 +119,8 @@ body {
 }
 
 .msg-erreur {
-    background: linear-gradient(135deg, #fee2e2, #fecaca);
-    color: #991b1b;
+    background: linear-gradient(135deg, #FEE2E2, #FECACA);
+    color: #991B1B;
     padding: 1rem;
     border-radius: 1rem;
     margin: 1.5rem 2rem;
@@ -128,8 +131,8 @@ body {
 }
 
 .message-erreur {
-    background: linear-gradient(135deg, #fee2e2, #fecaca);
-    color: #991b1b;
+    background: linear-gradient(135deg, #FEE2E2, #FECACA);
+    color: #991B1B;
     padding: 1rem;
     border-radius: 1rem;
     margin: 1.5rem 2rem;

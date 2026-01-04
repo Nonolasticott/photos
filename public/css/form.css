@@ -1,13 +1,13 @@
 .conteneur-formulaire {
-    max-width: 800px;
+    max-width: var(--largeur-max);
     margin: 0 auto;
 }
 
 .formulaire-ajout {
-    background: white;
+    background: #FFFFFF;
     padding: 2rem;
     border-radius: 1rem;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #E5E7EB;
 }
 
 .titre-formulaire {
@@ -42,7 +42,7 @@
 .champ-texte {
     width: 100%;
     padding: 0.5rem;
-    border: 2px solid #e5e7eb;
+    border: 2px solid #E5E7EB;
     border-radius: 0.5rem;
     font-size: 1rem;
     font-family: inherit;
@@ -60,7 +60,7 @@
 }
 
 .zone-tags {
-    border: 2px solid #e5e7eb;
+    border: 2px solid #E5E7EB;
     padding: 1rem;
     border-radius: 0.5rem;
     max-height: 300px;
@@ -95,7 +95,7 @@
 }
 
 .bouton-annuler {
-    background: #e5e7eb;
+    background: #E5E7EB;
     color: var(--couleur-texte);
     border: none;
     padding: 0.75rem 1.5rem;
@@ -112,7 +112,7 @@
 }
 
 .bouton-annuler:hover {
-    background: #d1d5db;
+    background: #D1D5DB;
 }
 
 .bouton-valider {
@@ -136,7 +136,7 @@
 }
 
 .zone-upload {
-    border: 3px dashed #d1d5db;
+    border: 3px dashed #D1D5DB;
     border-radius: 1rem;
     padding: 2rem;
     text-align: center;
@@ -146,7 +146,7 @@
 
 .zone-upload:hover {
     border-color: var(--couleur-principale);
-    background: #f0f1ff;
+    background: #F0F1FF;
 }
 
 .zone-upload i {
@@ -185,7 +185,7 @@
 
 .rating-stars label {
     cursor: pointer;
-    color: #d1d5db;
+    color: #D1D5DB;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -194,15 +194,15 @@
 }
 
 .rating-stars input[type="radio"]:checked ~ label {
-    color: #fbbf24;
+    color: #FBbf24;
 }
 
 .zone-nouveau-tag {
     margin-top: 1rem;
     padding: 1rem;
-    background: #f9fafb;
+    background: #F9FAFB;
     border-radius: 0.5rem;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #E5E7EB;
 }
 
 .zone-nouveau-tag-titre {
@@ -225,7 +225,7 @@
     flex: 1;
     min-width: 200px;
     padding: 0.5rem;
-    border: 2px solid #e5e7eb;
+    border: 2px solid #E5E7EB;
     border-radius: 0.5rem;
     font-size: 1rem;
     font-family: inherit;
@@ -238,7 +238,7 @@
 
 .bouton-ajouter-tag {
     background: var(--couleur-principale);
-    color: white;
+    color: #FFFFFF;
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -252,11 +252,11 @@
 }
 
 .bouton-ajouter-tag:hover {
-    background: #5a67d8;
+    background: #5A67D8;
 }
 
 .bouton-ajouter-tag:active {
-    background: #4c51bf;
+    background: #4C51BF;
 }
 
 #nouveau-tag-message {
@@ -270,7 +270,7 @@
 }
 
 #nouveau-tag-message.success {
-    background: #d1fae5;
-    color: #065f46;
+    background: #D1FAE5;
+    color: #065F46;
     display: block;
 }

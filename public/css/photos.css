@@ -1,9 +1,9 @@
 .entete-album {
-    background: white;
+    background: #FFFFFF;
     padding: 2rem;
     border-radius: 1rem;
     margin-bottom: 2rem;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #E5E7EB;
     position: relative;
 }
 
@@ -34,8 +34,8 @@
 }
 
 .bouton-retour {
-    background: #6b7280;
-    color: white;
+    background: #6B7280;
+    color: #FFFFFF;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -47,12 +47,12 @@
 }
 
 .bouton-retour:hover {
-    background: #4b5563;
+    background: #4B5563;
 }
 
 .bouton-ajouter {
     background: var(--couleur-succes);
-    color: white;
+    color: #FFFFFF;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -72,7 +72,7 @@
     top: 1rem;
     right: 1rem;
     background: var(--couleur-principale);
-    color: white;
+    color: #FFFFFF;
     border: none;
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -88,11 +88,11 @@
 }
 
 .zone-filtres {
-    background: white;
+    background: #FFFFFF;
     padding: 1.5rem;
     border-radius: 1rem;
     margin-bottom: 2rem;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #E5E7EB;
 }
 
 .etiquette-filtre {
@@ -107,7 +107,7 @@
 .tri {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #E5E7EB;
 }
 
 .filtres-bas {
@@ -127,7 +127,7 @@
 .input-recherche {
     width: 100%;
     padding: 0.5rem;
-    border: 2px solid #e5e7eb;
+    border: 2px solid #E5E7EB;
     border-radius: 0.5rem;
     font-size: 1rem;
     font-family: inherit;
@@ -151,23 +151,23 @@
 
 .tag-badge {
     display: inline-block;
-    background: #f3f4f6;
+    background: #F3F4F6;
     color: var(--couleur-texte);
     padding: 0.75rem 1.5rem;
     border-radius: 2rem;
-    border: 2px solid #e5e7eb;
+    border: 2px solid #E5E7EB;
     font-size: 1rem;
 }
 
 .tag-item input:checked + .tag-badge {
     background: var(--couleur-principale);
-    color: white;
+    color: #FFFFFF;
     border-color: var(--couleur-principale);
 }
 
 .bouton-appliquer {
     background: var(--couleur-principale);
-    color: white;
+    color: #FFFFFF;
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -181,7 +181,7 @@
 }
 
 .bouton-reinitialiser {
-    background: #e5e7eb;
+    background: #E5E7EB;
     color: var(--couleur-texte);
     border: none;
     padding: 0.75rem 1.5rem;
@@ -195,7 +195,7 @@
 }
 
 .bouton-reinitialiser:hover {
-    background: #d1d5db;
+    background: #D1D5DB;
 }
 
 .boutons-action {
