@@ -1,19 +1,19 @@
-.titre-page {
-    font-size: 2rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 50%, var(--couleur-accent) 100%);
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 2rem;
-    letter-spacing: -0.02em;
-}
-
 .panneau-controle {
     background: #FFFFFF;
     padding: 1.5rem;
     border-radius: 1rem;
     margin-bottom: 2rem;
     border: 1px solid #E5E7EB;
+}
+
+.titre-album {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--couleur-texte);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .titre-panneau {

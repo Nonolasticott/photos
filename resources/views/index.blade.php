@@ -8,11 +8,10 @@
 
 @section('contenu')
 <div>
-    <h1 class="titre-page">
-        <i class="fas fa-images"></i> Mes Albums Photo
-    </h1>
-
     <div class="panneau-controle">
+        <h1 class="titre-album">
+            <i class="fas fa-images"></i> Mes Albums Photo
+        </h1>
         <div class="titre-panneau">
             <i class="fas fa-sliders-h"></i>
             <span>Trier les albums</span>

@@ -155,18 +155,18 @@
     color: var(--couleur-texte);
     padding: 0.75rem 1.5rem;
     border-radius: 2rem;
-    border: 2px solid #E5E7EB;
+    border: none;
     font-size: 1rem;
 }
 
 .tag-item input:checked + .tag-badge {
-    background: var(--couleur-principale);
+    background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 100%);
     color: #FFFFFF;
-    border-color: var(--couleur-principale);
+    border-color: transparent;
 }
 
 .bouton-appliquer {
-    background: var(--couleur-principale);
+    background: var(--couleur-succes);
     color: #FFFFFF;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -177,7 +177,7 @@
 }
 
 .bouton-appliquer:hover {
-    background: var(--couleur-secondaire);
+    background: #059669;
 }
 
 .bouton-reinitialiser {
@@ -258,7 +258,7 @@
 }
 
 .etiquette-tag {
-    background: var(--couleur-principale);
+    background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 999px;

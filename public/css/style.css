@@ -1,7 +1,7 @@
 :root {
-    --couleur-principale: #6366F1;
-    --couleur-secondaire: #8B5CF6;
-    --couleur-accent: #EC4899;
+    --couleur-principale: #D4A574;
+    --couleur-secondaire: #8B6F47;
+    --couleur-accent: #C9A557;
     --couleur-succes: #10B981;
     --couleur-danger: #EF4444;
     --couleur-texte: #1F2937;
@@ -75,7 +75,7 @@ body {
 }
 
 .bouton-tri {
-    background: linear-gradient(135deg, var(--couleur-principale) 0%, var(--couleur-secondaire) 100%);
+    background: linear-gradient(135deg, var(--couleur-secondaire) 0%, var(--couleur-principale) 100%);
     color: #FFFFFF;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -140,4 +140,12 @@ body {
     align-items: center;
     gap: 0.5rem;
     font-weight: 500;
+}
+
+.carte-album::before {
+    background: linear-gradient(90deg, var(--couleur-secondaire) 0%, var(--couleur-principale) 100%);
+}
+
+.icone-album {
+    background: linear-gradient(135deg, var(--couleur-secondaire) 0%, var(--couleur-principale) 100%);
 }
